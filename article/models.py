@@ -7,7 +7,7 @@ class Article(models.Model):
     photo = models.ImageField(verbose_name='фото',blank=True)
     time_create = models.DateTimeField(auto_now_add=True)
     time_update = models.DateTimeField(auto_now=True)
-    category = models.ForeignKey('Category')
+    category = models.ForeignKey('Category',on_delete=models.DO_NOTHING)
     is_published = models.BooleanField(default=False)
     is_daily = models.BooleanField(default=True)
 
